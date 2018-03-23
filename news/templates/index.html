@@ -5,12 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-    {% for data in datas %}
-        <a href="/files/{{ data['id'] }}">{{ data['title'] }}</a>
-        {% for tag in data['tags'] %}
-            {{tag}}
+    {% extends "base.html" %}
+    {% block content %}
+        {% for data in datas %}
+            <a href="/files/{{ data['id'] }}">{{ data['title'] }}</a>
+            {% for tag in data['tags'] %}
+                {{tag}}
+            {% endfor %}
+            <br/>
         {% endfor %}
-        <br/>
-    {% endfor %}
+    {% endblock %}
 </body>
 </html>
